@@ -4,8 +4,15 @@
 <br />
 <button (click)="handleClick(zipCode.value)"> Buscar Cep </button>
 <br />
-<div *ngIf="addressZipCode$">
+
+<div *ngIf="addressZipCodeService.ready">
   <pre>
-    {{ addressZipCode$ | async | json }}
+    {{ addressZipCodeService.data | json }}
   </pre>
 </div>
+
+<div *ngIf="addressZipCodeService.loading">
+  carregando
+</div>
+
+

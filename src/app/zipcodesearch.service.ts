@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, from } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, delay  } from 'rxjs/operators';
 
 import * as cep from 'cep-promise';
 import zipCode from './models/zipCode';
@@ -17,6 +17,7 @@ export class ZipcodesearchService {
     return from(
       cep(zip)
     )
+    .pipe(delay(2000))
     .pipe<zipCode>(
       map(x => {
         const ret = new zipCode();
