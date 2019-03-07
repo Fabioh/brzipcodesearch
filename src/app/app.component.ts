@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import zipCode from './models/zipCode';
+import { ZipcodesearchService } from './zipcodesearch.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'brzipcodesearch';
+
+  addressZipCode$: Observable<zipCode>;
+
+  constructor(private service: ZipcodesearchService) { }
+
+  handleClick(zip: string) {
+    this.addressZipCode$ = this.service.searchZipCode(zip);
+  }
 }
