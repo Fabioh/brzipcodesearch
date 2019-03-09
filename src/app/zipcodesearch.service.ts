@@ -3,7 +3,7 @@ import { Observable, from } from 'rxjs';
 import { map, delay } from 'rxjs/operators';
 
 import * as cep from 'cep-promise';
-import zipCode from './models/zipCode';
+import ZipCode from './models/zipCode';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class ZipCodeSearchService {
 
   constructor() { }
 
-  searchZipCode(zip: string): Observable<zipCode> {
+  searchZipCode(zip: string): Observable<ZipCode> {
 
     return from(
       cep(zip)
@@ -20,15 +20,15 @@ export class ZipCodeSearchService {
     .pipe(
       delay(5000)
     )
-    .pipe<zipCode>(
+    .pipe<ZipCode>(
       map(x => {
-        const ret = new zipCode();
-        ret.zipCode = x.cep;
-        ret.city = x.city;
-        ret.neighborhood = x.neighborhood;
-        ret.street = x.street;
-        ret.state = x.state;
-        return ret;
+        return new ZipCode(
+          x.cep,
+          x.state,
+          x.city,
+          x.street,
+          x.neighborhood
+        );
       })
     );
   }

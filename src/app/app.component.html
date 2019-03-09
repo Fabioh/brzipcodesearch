@@ -1,11 +1,17 @@
 <h2> Busca de Cep </h2>
 
-<label>CEP: </label><input type="number" #zipCode/>
+<label>CEP: </label><input type="number" #zipCode />
 <br />
 <button (click)="handleClick(zipCode.value)"> Buscar Cep </button>
 <br />
-<div *ngIf="addressZipCode$">
-  <pre>
-    {{ addressZipCode$ | async | json }}
-  </pre>
+
+<div *ngIf="showResult">
+  <div *ngIf="addressZipCode$ | async as zipCode; else loading">
+    <pre>
+    {{ zipCode | json }}
+    </pre>
+  </div>
+  <ng-template #loading>
+    <span>loading...</span>
+  </ng-template>
 </div>

@@ -1,9 +1,11 @@
-class zipCode {
-  zipCode: string;
-  state: string;
-  city: string;
-  street: string;
-  neighborhood: string;
-}
+export default class ZipCode {
 
-export default zipCode;
+  constructor(
+    zipCode: string,
+    state: string,
+    city: string,
+    street: string,
+    neighborhood: string
+  ) {
+  }
+}
