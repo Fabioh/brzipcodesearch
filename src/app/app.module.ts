@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ZicodesearchService } from './zicodesearch.service';
+import { ZipCodeSearchService } from './zipcodesearch.service';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,7 @@ import { ZicodesearchService } from './zicodesearch.service';
   imports: [
     BrowserModule
   ],
-  providers: [ZicodesearchService],
+  providers: [ZipCodeSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
