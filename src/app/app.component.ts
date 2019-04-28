@@ -13,9 +13,12 @@ export class AppComponent {
 
   addressZipCode$: Observable<zipCode>;
 
+  showResult = false;
+
   constructor(private service: ZipCodeSearchService) { }
 
   handleClick(zip: string) {
+    this.showResult = true;
     this.addressZipCode$ = this.service.searchZipCode(zip);
   }
 }
