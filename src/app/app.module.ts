@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {NgxMaskModule} from 'ngx-mask';
 
 import { AppComponent } from './app.component';
 import { ZipCodeSearchService } from './zipcodesearch.service';
@@ -9,7 +10,8 @@ import { ZipCodeSearchService } from './zipcodesearch.service';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [ZipCodeSearchService],
   bootstrap: [AppComponent]
