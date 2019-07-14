@@ -17,9 +17,9 @@ export class ZipCodeSearchService {
     return from(
       cep(zip)
     )
-    .pipe(
-      delay(5000)
-    )
+    // .pipe(
+    //   delay(5000)
+    // )
     .pipe<ZipCode>(
       map(x => {
         return new ZipCode(
