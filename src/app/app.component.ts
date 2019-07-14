@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import zipCode from './models/zipCode';
-import { ZipCodeSearchService } from './zipcodesearch.service';
+import { ZipCodeSearchService } from 'src/app/services/zipcodesearch.service';
 
 @Component({
   selector: 'app-root',

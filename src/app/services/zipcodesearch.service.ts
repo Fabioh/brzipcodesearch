@@ -3,7 +3,7 @@ import { Observable, from } from 'rxjs';
 import { map, delay } from 'rxjs/operators';
 
 import * as cep from 'cep-promise';
-import ZipCode from './models/zipCode';
+import ZipCode from 'src/app/models/zipCode';
 
 @Injectable({
   providedIn: 'root'
