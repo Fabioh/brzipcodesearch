@@ -1,9 +1,19 @@
 <h2> Busca de Cep </h2>
 
+<!--
 <label>CEP: </label><input type="number" #zipCode />
 <br />
 <button (click)="handleClick(zipCode.value)"> Buscar Cep </button>
 <br />
+-->
+
+
+<div class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Cep" type="number" #zipCode>
+  </mat-form-field>
+  <button mat-raised-button (click)="handleClick(zipCode.value)">Buscar Cep</button>
+</div>
 
 <div *ngIf="showResult">
   <div *ngIf="addressZipCode$ | async as zipCode; else loading">
